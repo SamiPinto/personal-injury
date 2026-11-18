@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { practice, practiceIcon } from '../data/practice.js'
 import { firm } from '../data/site.js'
 import Icon from '../components/Icon.jsx'
@@ -6,6 +7,74 @@ import { SoonLink } from '../components/ComingSoon.jsx'
 // Short text shows on hover/focus where hovering exists; always visible on touch screens
 const reveal =
   'grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] grid-rows-[1fr] [@media(hover:hover)]:grid-rows-[0fr] [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:grid-rows-[1fr] [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-visible:grid-rows-[1fr] [@media(hover:hover)]:group-focus-visible:opacity-100'
+
+const canHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
+const motionOk = () =>
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches && !navigator.connection?.saveData
+
+// Poster is the video's first frame, so playback starts without a visible jump. The video downloads
+// only on first hover/focus (or when scrolled into view on touch screens), never with the page.
+function ServiceMedia({ slug }) {
+  const box = useRef(null)
+  const video = useRef(null)
+  const [armed, setArmed] = useState(false)
+  const [playing, setPlaying] = useState(false)
+  const base = `/videos/services/${slug}`
+
+  useEffect(() => {
+    const card = box.current?.closest('a')
+    if (!card || !motionOk()) return
+    const play = () => {
+      setArmed(true)
+      video.current?.play().catch(() => {})
+    }
+    const stop = () => video.current?.pause()
+
+    if (canHover()) {
+      card.addEventListener('pointerenter', play)
+      card.addEventListener('pointerleave', stop)
+      card.addEventListener('focus', play)
+      card.addEventListener('blur', stop)
+      return () => {
+        card.removeEventListener('pointerenter', play)
+        card.removeEventListener('pointerleave', stop)
+        card.removeEventListener('focus', play)
+        card.removeEventListener('blur', stop)
+      }
+    }
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? play() : stop()), { threshold: 0.6 })
+    io.observe(card)
+    return () => io.disconnect()
+  }, [])
+
+  // Sources attach after the first intent; play once they exist.
+  useEffect(() => {
+    if (!armed) return
+    const v = video.current
+    v.load()
+    const card = box.current.closest('a')
+    if (card.matches(':hover, :focus-visible') || !canHover()) v.play().catch(() => {})
+  }, [armed])
+
+  return (
+    <div ref={box} aria-hidden="true" className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110">
+      <img src={`${base}.webp`} alt="" width="828" height="1108" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+      <video
+        ref={video}
+        muted
+        loop
+        playsInline
+        preload="none"
+        disablePictureInPicture
+        onPlaying={() => setPlaying(true)}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${playing ? 'opacity-100' : 'opacity-0'}`}
+      >
+        {armed && <source src={`${base}.av1.mp4`} type='video/mp4; codecs="av01.0.08M.08"' />}
+        {armed && <source src={`${base}.mp4`} type="video/mp4" />}
+      </video>
+    </div>
+  )
+}
 
 export default function Services() {
   return (
@@ -39,14 +108,7 @@ export default function Services() {
                 page={p.name}
                 className="group relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-[1.75rem] bg-navy-900 p-6 text-white shadow-[0_24px_48px_-30px_rgb(1_34_56/0.6)] sm:aspect-[4/5] lg:aspect-[3/4]"
               >
-                <img
-                  src={p.img}
-                  alt=""
-                  width="1024"
-                  height="682"
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110"
-                />
+                <ServiceMedia slug={p.slug} />
                 <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,rgb(1_34_56/0.1)_0%,rgb(1_34_56/0.3)_35%,rgb(1_34_56/0.88)_62%,rgb(1_34_56/0.96)_100%)] transition-colors duration-500" />
                 <div aria-hidden="true" className="absolute inset-0 bg-navy-900/0 transition-colors duration-500 group-hover:bg-navy-900/35" />
 
