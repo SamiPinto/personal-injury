@@ -81,7 +81,7 @@ export default function Header() {
 
       <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-[0_8px_30px_-12px_rgb(1_34_56/0.25)]' : ''}`}>
         <div className="wrap flex h-20 items-center justify-between gap-6">
-          <a href="#main" onClick={close} className="shrink-0" aria-label="Burke Mead Lawyers, back to top">
+          <a href="#main" onClick={close} className="flex min-h-11 shrink-0 items-center" aria-label="Burke Mead Lawyers, back to top">
             <img src="/images/logo.png" alt="Burke Mead Lawyers" width="263" height="49" className="h-10 w-auto" />
           </a>
 

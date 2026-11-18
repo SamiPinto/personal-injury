@@ -15,7 +15,7 @@ export default function WhyUs() {
             className="aspect-[4/3] w-full rounded-[2rem] object-cover lg:aspect-[5/5.4]"
           />
           <div className="absolute -bottom-8 left-4 right-4 flex items-center gap-4 rounded-2xl bg-white p-4 shadow-[0_24px_50px_-20px_rgb(1_34_56/0.45)] sm:left-8 sm:right-auto sm:max-w-sm sm:p-5">
-            <img src="/images/team/emma-mead.png" alt="" width="64" height="64" loading="lazy" className="size-14 shrink-0 rounded-full object-cover" />
+            <img src="/images/team/emma-mead.webp" alt="" width="64" height="64" loading="lazy" className="size-14 shrink-0 rounded-full object-cover" />
             <p className="text-[0.95rem] leading-snug">
               <span className="block font-display font-semibold text-ink">Led by Emma Mead</span>
               Accredited Specialist in Personal Injury Law and Accredited Mediator

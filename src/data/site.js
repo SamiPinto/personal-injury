@@ -2,8 +2,8 @@
 
 export const firm = {
   name: 'Burke Mead Lawyers',
-  phone: '02 4902 3800',
-  phoneHref: 'tel:0249023800',
+  phone: '(02) 4902 3800',
+  phoneHref: 'tel:+61249023800',
   email: 'office@burkemeadlawyers.com.au',
   tagline: 'With you every step of the way',
   legal:
@@ -42,11 +42,11 @@ export const featuredArticles = [
 ]
 
 export const offices = [
-  { city: 'Newcastle', lines: ['Level 4/21 Bolton Street', 'Newcastle NSW 2300'], phone: '02 4902 3800' },
-  { city: 'Maitland', lines: ['Level 1, 14 Bulwer Street', 'Maitland NSW 2320'], phone: '02 4902 3800' },
-  { city: 'Central Coast', lines: ['Suite 1-29, 3 Amy Close', 'North Wyong NSW 2259'], phone: '02 4312 8900' },
-  { city: 'Sydney', lines: ['299 Elizabeth Street', 'Sydney NSW 2000'], phone: '02 8251 0057' },
-  { city: 'Dubbo', lines: ['83 Wingewarra Street', 'Dubbo NSW 2830'], phone: '02 6188 4620' },
+  { city: 'Newcastle', lines: ['Level 4/21 Bolton Street', 'Newcastle NSW 2300'], phone: '(02) 4902 3800' },
+  { city: 'Maitland', lines: ['Level 1, 14 Bulwer Street', 'Maitland NSW 2320'], phone: '(02) 4902 3800' },
+  { city: 'Central Coast', lines: ['Suite 1-29, 3 Amy Close', 'North Wyong NSW 2259'], phone: '(02) 4312 8900' },
+  { city: 'Sydney', lines: ['299 Elizabeth Street', 'Sydney NSW 2000'], phone: '(02) 8251 0057' },
+  { city: 'Dubbo', lines: ['83 Wingewarra Street', 'Dubbo NSW 2830'], phone: '(02) 6188 4620' },
 ]
 
 export const areasServed = [

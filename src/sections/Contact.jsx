@@ -9,7 +9,7 @@ const label = 'block font-display text-[0.9rem] font-semibold text-ink'
 
 function Req() {
   return (
-    <span aria-hidden="true" className="ml-0.5 text-gold-600">
+    <span aria-hidden="true" className="ml-0.5 text-gold-700">
       *
     </span>
   )
@@ -74,7 +74,7 @@ export default function Contact() {
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h3 id="form-title" className="text-[1.5rem] font-bold leading-tight">Send an enquiry</h3>
               <p className="text-[0.875rem]">
-                <span className="text-gold-600">*</span> Required
+                <span className="text-gold-700">*</span> Required
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function Contact() {
                   <span key={l} className="block">{l}</span>
                 ))}
               </address>
-              <a href={`tel:${o.phone.replace(/\D/g, '')}`} className="mt-2 inline-flex min-h-11 items-center gap-2 font-display font-semibold text-navy hover:text-gold-600">
+              <a href={`tel:+61${o.phone.replace(/\D/g, '').slice(1)}`} className="mt-2 inline-flex min-h-11 items-center gap-2 font-display font-semibold text-navy hover:text-gold-700">
                 <Icon name="phone" className="size-4" />
                 {o.phone}
               </a>

@@ -30,12 +30,12 @@ export default function Footer() {
             <img src="/images/logo.png" alt="Burke Mead Lawyers" width="263" height="49" loading="lazy" className="h-9 w-auto" />
           </span>
           <p className="mt-6 max-w-[22rem] text-[0.95rem] leading-relaxed">{firm.legal}</p>
-          <div className="mt-6 space-y-2">
-            <a href={firm.phoneHref} className="flex items-center gap-3 font-display text-[1.15rem] font-semibold text-white hover:text-gold">
+          <div className="mt-5">
+            <a href={firm.phoneHref} className="flex min-h-11 items-center gap-3 font-display text-[1.15rem] font-semibold text-white hover:text-gold">
               <Icon name="phone" className="size-5 text-gold" />
               {firm.phone}
             </a>
-            <a href={`mailto:${firm.email}`} className="flex items-center gap-3 text-white hover:text-gold">
+            <a href={`mailto:${firm.email}`} className="flex min-h-11 items-center gap-3 text-white hover:text-gold">
               <Icon name="mail" className="size-5 text-gold" />
               {firm.email}
             </a>
@@ -44,10 +44,10 @@ export default function Footer() {
 
         <div>
           <h2 className="font-display text-[1.05rem] font-semibold text-white">Quick links</h2>
-          <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 lg:grid-cols-1">
+          <ul className="mt-2 grid grid-cols-2 gap-x-6 lg:grid-cols-1">
             {quick.map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="transition-colors hover:text-gold">
+                <a href={href} className="inline-flex min-h-11 items-center transition-colors hover:text-gold">
                   {label}
                 </a>
               </li>
@@ -57,10 +57,10 @@ export default function Footer() {
 
         <div>
           <h2 className="font-display text-[1.05rem] font-semibold text-white">Practice areas</h2>
-          <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+          <ul className="mt-2 grid gap-x-6 sm:grid-cols-2">
             {practice.map((p) => (
               <li key={p.slug}>
-                <SoonLink page={p.name} className="transition-colors hover:text-gold">
+                <SoonLink page={p.name} className="inline-flex min-h-11 items-center transition-colors hover:text-gold">
                   {p.name}
                 </SoonLink>
               </li>
@@ -70,12 +70,12 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="wrap flex flex-col gap-3 py-6 text-[0.9rem] md:flex-row md:items-center md:justify-between">
+        <div className="wrap flex flex-col gap-1 py-4 text-[0.9rem] md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {firm.name}. All rights reserved.</p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap gap-x-6">
             {legal.map(([slug, label]) => (
               <li key={slug}>
-                <SoonLink page={label} className="hover:text-gold">
+                <SoonLink page={label} className="inline-flex min-h-11 items-center hover:text-gold">
                   {label}
                 </SoonLink>
               </li>

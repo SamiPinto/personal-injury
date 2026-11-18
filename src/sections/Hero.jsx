@@ -60,7 +60,7 @@ function ClaimFinder() {
           ))}
         </ul>
         <p className="mt-4 flex items-start gap-2.5 rounded-xl bg-white px-3.5 py-3 text-[0.9rem] leading-snug text-ink">
-          <Icon name="clock" className="mt-0.5 size-4 shrink-0 text-gold-600" />
+          <Icon name="clock" className="mt-0.5 size-4 shrink-0 text-gold-700" />
           <span>
             <strong className="font-semibold">Time limits apply.</strong> {p.timeLimit}
           </span>

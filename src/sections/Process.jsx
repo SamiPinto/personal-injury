@@ -31,14 +31,14 @@ export default function Process() {
             Get started in 3 simple steps
           </h2>
           <p className="lede mt-5 max-w-[32rem]">
-            Taking the first step toward legal support doesn't have to be complicated. Follow our simple process and let us guide you every step of the way.
+            Taking the first step towards legal support doesn't have to be complicated. Follow our simple process and let us guide you every step of the way.
           </p>
 
           <div className="mt-10 rounded-[2rem] bg-navy-900 p-7 text-white sm:p-8">
             <div className="flex items-center gap-4">
               <div className="flex shrink-0 -space-x-3">
                 {faces.map((t) => (
-                  <img key={t.name} src={`/images/team/${t.img}.png`} alt="" width="48" height="48" loading="lazy" className="size-12 rounded-full object-cover ring-[3px] ring-navy-900" />
+                  <img key={t.name} src={`/images/team/${t.img}.webp`} alt="" width="48" height="48" loading="lazy" className="size-12 rounded-full object-cover ring-[3px] ring-navy-900" />
                 ))}
               </div>
               <p className="text-[0.95rem] leading-snug text-sky">

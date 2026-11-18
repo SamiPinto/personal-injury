@@ -23,7 +23,7 @@ export default function Articles() {
                 <div className="overflow-hidden rounded-3xl">
                   <img src={a.img} alt="" width="1024" height="683" loading="lazy" className="aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <p className="mt-5 text-[0.9rem] font-semibold text-gold-600">{a.topic}</p>
+                <p className="mt-5 text-[0.9rem] font-semibold text-gold-700">{a.topic}</p>
                 <h3 className="mt-1.5 text-[1.3rem] font-bold leading-snug group-hover:text-navy">{a.title}</h3>
                 <span className="mt-3 inline-flex items-center gap-2 font-display font-semibold text-navy">
                   Read article

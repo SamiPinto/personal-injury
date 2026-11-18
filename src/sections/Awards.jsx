@@ -5,7 +5,7 @@ import Icon from '../components/Icon.jsx'
 const years = [...new Set(awards.map((a) => a[0]))]
 // Badge image for each award, in the order of the awards list (paired from the live site).
 const badgeOrder = [20, 21, 22, 14, 15, 16, 17, 18, 19, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-const withBadge = awards.map((a, i) => [...a, `/images/awards/a${String(badgeOrder[i]).padStart(2, '0')}.png`])
+const withBadge = awards.map((a, i) => [...a, `/images/awards/a${String(badgeOrder[i]).padStart(2, '0')}.webp`])
 
 export default function Awards() {
   const [year, setYear] = useState(years[0])
@@ -43,7 +43,7 @@ export default function Awards() {
             <li key={rank + cat} className="flex items-center gap-5 rounded-3xl bg-white p-5">
               <img src={badge} alt="" width="371" height="340" loading="lazy" className="h-20 w-auto shrink-0" />
               <div>
-                <p className="flex items-center gap-1.5 text-[0.875rem] font-semibold text-gold-600">
+                <p className="flex items-center gap-1.5 text-[0.875rem] font-semibold text-gold-700">
                   <Icon name="award" className="size-4" />
                   {body} {y}
                 </p>

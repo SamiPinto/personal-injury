@@ -47,7 +47,7 @@ export default function Services() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110"
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,rgb(1_34_56/0.1)_0%,rgb(1_34_56/0.25)_40%,rgb(1_34_56/0.94)_100%)] transition-colors duration-500" />
+                <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,rgb(1_34_56/0.1)_0%,rgb(1_34_56/0.3)_35%,rgb(1_34_56/0.88)_62%,rgb(1_34_56/0.96)_100%)] transition-colors duration-500" />
                 <div aria-hidden="true" className="absolute inset-0 bg-navy-900/0 transition-colors duration-500 group-hover:bg-navy-900/35" />
 
                 <span className="relative grid size-12 place-items-center rounded-2xl bg-gold text-navy-900 shadow-lg">

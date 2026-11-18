@@ -9,7 +9,7 @@ export default function Team() {
       <div className="wrap">
         <div className="grid items-center gap-12 overflow-hidden rounded-[2rem] bg-white lg:grid-cols-[0.9fr_1.1fr] lg:gap-0">
           <div data-reveal="left" className="relative h-full min-h-[26rem] bg-mist-200">
-            <img src="/images/emma-mead.png" alt="Emma Mead, Managing Director" width="705" height="800" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
+            <img src="/images/emma-mead.png" alt="Emma Mead, Managing Director" width="705" height="565" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
           </div>
           <div data-reveal="right" style={{ '--rd': '120ms' }} className="p-7 pt-0 sm:p-12 lg:p-16">
             <p className="inline-flex items-center gap-2 rounded-full bg-sky px-4 py-1.5 text-[0.9rem] font-semibold text-navy">
@@ -42,7 +42,7 @@ export default function Team() {
             <h3 className="text-[clamp(1.6rem,1.3rem+1vw,2.25rem)] font-bold">Meet the team</h3>
             <p className="mt-2 max-w-[36rem]">Lawyers, paralegals and support staff who'll know your matter by name.</p>
           </div>
-          <SoonLink page="Team profiles" className="inline-flex items-center gap-2 font-display font-semibold text-navy hover:underline">
+          <SoonLink page="Team profiles" className="inline-flex min-h-11 items-center gap-2 font-display font-semibold text-navy hover:underline">
             View all profiles <Icon name="arrow" className="size-4" />
           </SoonLink>
         </div>
@@ -52,7 +52,7 @@ export default function Team() {
             <li key={t.name} className="group overflow-hidden rounded-3xl bg-white">
               <div className="overflow-hidden bg-mist-200">
                 <img
-                  src={`/images/team/${t.img}.png`}
+                  src={`/images/team/${t.img}.webp`}
                   alt={`${t.name}, ${t.role}`}
                   width="800"
                   height="800"

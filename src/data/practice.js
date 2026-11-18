@@ -210,7 +210,7 @@ export const practice = [
       ['Failure to advise', 'Failing to give advice about critical issues affecting your position.'],
     ],
     stepsTitle: 'How to make a professional negligence claim',
-    timeLimit: 'Most disputes are finalised within two years of engaging a lawyer. Seek advice as soon as possible.',
+    timeLimit: 'Time limits apply to professional negligence claims, and they can be short. Seek advice as early as you can.',
     steps: [
       'Establish eligibility: did you suffer loss, and was it caused by the negligence of a professional?',
       'Gather as much evidence of the damage or losses as possible.',
